@@ -11,15 +11,15 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./my-website
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
-        defaults:
-          run:
-            shell: bash
-            working-directory: ./my-website
         with:
           node-version: 18
           cache: yarn
