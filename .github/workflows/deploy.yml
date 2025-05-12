@@ -16,6 +16,10 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
+        defaults:
+          run:
+            shell: bash
+            working-directory: ./my-website
         with:
           node-version: 18
           cache: yarn
